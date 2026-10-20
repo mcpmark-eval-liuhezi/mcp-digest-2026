@@ -2,8 +2,9 @@
 
 A distilled, source-backed digest of the Model Context Protocol, prepared for our lab's
 onboarding talk as we evaluate MCP as the standard way for internal tools to talk to LLM
-assistants. Everything below is grounded in the web research captured in the raw notes
-gist; the full source list is in the [Sources](#sources) section.
+assistants. Everything below is grounded in open-web research; the raw notes are preserved
+alongside this digest as `mcp-research-notes.md`, and the full source list is in the
+[Sources](#sources) section.
 
 ## TL;DR
 
@@ -73,11 +74,11 @@ assistant becomes an **MCP host/client** — one implementation serves every ass
 Each MCP server exposes primitives, which enable rich interactions between clients,
 servers, and language models. The three server primitives:
 
-| Primitive | Controlled by | Model-controlled? | Best for |
-| --- | --- | --- | Performing actions |
-| **Tools** | model | Yes | Performing actions |
-| **Resources** | application | No | Exposing read-only context |
-| **Prompts** | user | No | Reusable templates |
+| Primitive | Controlled by | Best for |
+| --- | --- | --- |
+| **Tools** | model | Performing actions the model decides to take |
+| **Resources** | application | Exposing read-only context |
+| **Prompts** | user | Reusable, user-invoked templates |
 
 ### Tools
 Functions the model can decide to call to take actions. This is what most teams reach for
@@ -176,7 +177,7 @@ Signals that MCP is becoming a de facto rather than vendor-specific standard:
 - [Specification changelog](https://modelcontextprotocol.io/changelog)
 - [The 2026-07-28 MCP Specification Release Candidate — official blog](https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/)
 - [Specification and documentation repository — GitHub](https://github.com/modelcontextprotocol/modelcontextprotocol)
-- [GitHub Discussions — "Distinction between hosts and clients in MCP"](https://github.com/modelcontextprotocol/discussions)
+- [GitHub Discussions — "Distinction between \"hosts\" and \"clients\" in MCP"](https://github.com/modelcontextprotocol/discussions)
 
 ### Secondary
 
@@ -205,5 +206,5 @@ hub/section pages rather than a specific article; treat those as supporting cont
 
 ---
 
-*Prepared from open-web research. Raw notes are preserved in the accompanying research
-notes gist (see the tracking issue for the link).*
+*Prepared from open-web research. Raw notes are preserved in `mcp-research-notes.md`
+alongside this digest; see the tracking issue for links.*
